@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pabreg.org</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+        .image-container {
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 3em;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;" ondragstart="return false;">
+    <div class="image-container">
+        <img src="https://pabreg.github.io/scan/20250317-A.jpg" alt="Affidavit">
+        <div class="watermark">© All Rights Reserved</div>
+    </div>
+
+    <script>
+        // Disable text and image selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
